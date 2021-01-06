@@ -3,3 +3,10 @@
   padding: 0;
   margin: 0;
 }
+
+.App_pageBodyContainer {
+  position: 'absolute';
+  left: '50%';
+  top: '50%';
+  transform: 'translate(-50%, -50%)'
+}
