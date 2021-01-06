@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchAllStoresList } from './API/StoresApi';
 import { Alert } from '@material-ui/lab';
+import { Grid } from '@material-ui/core';
 import Header from './sharedComponents/Header';
 import AllStoresTable from './components/AllStoresTable';
 import StoreDetails from './components/StoreDetails';
@@ -34,14 +35,26 @@ function App() {
       { !isLoading && error && 
         <Alert severity="error">{error.message}</Alert>      
       }  
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '90vh' }}
+      >
 
-      { !isLoading && storesArray && 
-        <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>      
-      }
+        <Grid item xs={3}>
+          { !isLoading && storesArray && 
+            <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>    
+          }
 
-      { selectedStore &&
-        <StoreDetails selectedStore={selectedStore} />
-      }
+          { selectedStore &&
+            <StoreDetails selectedStore={selectedStore} />
+          }
+        </Grid>   
+      </Grid> 
+        
     </div>
   );
 }
