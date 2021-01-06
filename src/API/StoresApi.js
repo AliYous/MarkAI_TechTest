@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const baseURL = process.env.REACT_APP_DOMAIN;
+const baseURL = 'https://markai.getsandbox.com';
 
 
 export const fetchAllStoresList = async () => {
   return axios({
     method: 'get',
-    url: `${baseURL}/api/stores`,
+    url: `${baseURL}/stores`,
   });
 }
