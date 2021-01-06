@@ -1,9 +1,9 @@
-import React from 'react'
+import './header.css';
 
 function Header() {
-  return (
-    <div>
-      
+  return ( 
+    <div className="Header">
+      <h2>Profit Tracker</h2>
     </div>
   )
 }
