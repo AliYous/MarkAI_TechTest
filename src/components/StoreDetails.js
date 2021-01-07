@@ -14,7 +14,7 @@ function StoreDetails({selectedStore}) {
         </div>
         <div className="StoreDetails_adSpend_div">
           <p><b>Monthly profits: </b>
-            <span className={`${selectedStore.isProfitable ? "AllStoresTableRow_isProfitable" : "AllStoresTableRow_isNotProfitable"}`}>
+            <span className={`${selectedStore.isProfitable ? "textColor_green" : "textColor_red"}`}>
               ${selectedStore.monthlyProfits}
             </span></p>
 

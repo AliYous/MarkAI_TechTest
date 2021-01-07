@@ -36,7 +36,7 @@ const AllStoresTableRow = ({store, handleClick}) => {
         <TableCell 
           align="center"
         >
-          <p className={`${store.isProfitable ? "AllStoresTableRow_isProfitable" : "AllStoresTableRow_isNotProfitable"}`}>
+          <p className={`${store.isProfitable ? "textColor_green" : "textColor_red"}`}>
             {store.isProfitable ? 'YES' : 'NO'}
           </p>
         </TableCell>

@@ -15,3 +15,10 @@
 .App_pageBodyContainer > h2 {
   margin-bottom: -1rem;
 }
+
+.textColor_green {
+  color: green;
+}
+.textColor_red {
+  color: red;
+}
