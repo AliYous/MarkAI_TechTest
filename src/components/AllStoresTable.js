@@ -1,13 +1,13 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import {formatMoneyAmount} from '../utils/formatMoneyAmount';
-import './allStoresTable.css';
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@material-ui/core";
+import {formatMoneyAmount} from "../utils/formatMoneyAmount";
+import "./allStoresTable.css";
 
 function AllStoresTable({storesArray, selectedStore, setSelectedStore}) {
   return (
     <div className="AllStoresTable">
         <TableContainer component={Paper} >
-            <Table style={{tableLayout: 'fixed', minWidth: '650'}} >
-              <TableHead style={{backgroundColor: '#E4E6EB' }} >
+            <Table style={{tableLayout: "fixed", minWidth: "650"}} >
+              <TableHead style={{backgroundColor: "#E4E6EB" }} >
                 <TableRow>
                   <TableCell>Store Name</TableCell>
                   <TableCell align="left">CMS</TableCell>
@@ -36,7 +36,7 @@ const AllStoresTableRow = ({store, selectedStore, handleClick}) => {
       key={store.name} 
       className="AllStoresTableRow" 
       onClick={() => handleClick(store)} 
-      style={{backgroundColor: selectedStore && selectedStore.name === store.name ? '#D0E9FF' : ''}}
+      style={{backgroundColor: selectedStore && selectedStore.name === store.name ? "#D0E9FF" : ""}}
       >
         <TableCell component="th" scope="row">
           {store.name}
@@ -47,7 +47,7 @@ const AllStoresTableRow = ({store, selectedStore, handleClick}) => {
           align="center"
         >
           <p className={`${store.isProfitable ? "textColor_green" : "textColor_red"}`}>
-            {store.isProfitable ? 'YES' : 'NO'}
+            {store.isProfitable ? "YES" : "NO"}
           </p>
         </TableCell>
       </TableRow>

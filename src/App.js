@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import { fetchAllStoresList } from './API/StoresApi';
-import { Alert } from '@material-ui/lab';
-import { Box, CircularProgress } from '@material-ui/core';
-import Header from './sharedComponents/Header';
-import AllStoresTable from './components/AllStoresTable';
-import StoreDetails from './components/StoreDetails';
-import { updateFetchedStores } from './utils/storeCalculations';
+import { useEffect, useState } from "react";
+import { fetchAllStoresList } from "./API/StoresApi";
+import { Alert } from "@material-ui/lab";
+import { Box, CircularProgress } from "@material-ui/core";
+import Header from "./sharedComponents/Header";
+import AllStoresTable from "./components/AllStoresTable";
+import StoreDetails from "./components/StoreDetails";
+import { updateFetchedStores } from "./utils/storeCalculations";
 
-import './App.css';
+import "./App.css";
 
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
           setSelectedStore={setSelectedStore}
           />    
           :
-          <CircularProgress color="primary" style={{ marginTop: '1rem' }} />
+          <CircularProgress color="primary" style={{ marginTop: "1rem" }} />
         }
 
         <h2>Selected Store Details</h2>

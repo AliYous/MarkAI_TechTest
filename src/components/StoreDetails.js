@@ -1,7 +1,7 @@
-import './storeDetails.css';
-import {formatMoneyAmount} from '../utils/formatMoneyAmount';
-import { Paper, Typography, Tooltip} from '@material-ui/core';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import "./storeDetails.css";
+import {formatMoneyAmount} from "../utils/formatMoneyAmount";
+import { Paper, Typography, Tooltip} from "@material-ui/core";
+import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 
 function StoreDetails({selectedStore}) {
   return (
