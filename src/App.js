@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchAllStoresList } from './API/StoresApi';
 import { Alert } from '@material-ui/lab';
-import { Box } from '@material-ui/core';
+import { Box, CircularProgress } from '@material-ui/core';
 import Header from './sharedComponents/Header';
 import AllStoresTable from './components/AllStoresTable';
 import StoreDetails from './components/StoreDetails';
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+  
       { !isLoading && error && 
         <Alert severity="error">{error.message}</Alert>      
       } 
@@ -46,13 +46,18 @@ function App() {
         className="App_pageBodyContainer"
       >
         <h2>Stores Overview</h2>
-        { !isLoading && storesArray && 
-          <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>      
+
+        { !isLoading && storesArray ? 
+          <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>    
+          :
+          <CircularProgress color="primary" />
         }
 
         <h2>Selected Store Details</h2>
-        { selectedStore &&
+        { selectedStore ?
           <StoreDetails selectedStore={selectedStore} />
+          :
+          <p>Select a store to see more data</p>
         }
       </Box>
     </div>
