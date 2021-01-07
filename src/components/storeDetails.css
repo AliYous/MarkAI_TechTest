@@ -17,3 +17,9 @@
     .StoreDetails_adSpend_div {
       margin-left: -5rem;
     }
+    .StoreDetails_ROAS_div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 5px;
+    }

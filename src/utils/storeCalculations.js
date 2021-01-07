@@ -25,7 +25,7 @@ const isProfitable = (store) => {
 const getMonthlyProfits = (store) => {
   const totalYearlyAdSpend = getTotalYearlyAdSpend(store);
   const yearlyProfits = store.sales.year - totalYearlyAdSpend;
-  return (yearlyProfits / 12);
+  return ((yearlyProfits / 12).toFixed(2));
 };
 
 

@@ -1,5 +1,6 @@
 import './storeDetails.css';
-import { Paper } from '@material-ui/core';
+import { Paper, Typography, Tooltip} from '@material-ui/core';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 function StoreDetails({selectedStore}) {
   return (
@@ -12,11 +13,23 @@ function StoreDetails({selectedStore}) {
           <p>Yearly Facebook Ad Spend : {selectedStore.adSpend.facebook.year}</p>
         </div>
         <div className="StoreDetails_adSpend_div">
-          <p><b>Monthly profits: </b>{selectedStore.adSpend.google.year}</p>
-          <p> ROAS: {selectedStore.totalRoas}</p>
+          <p><b>Monthly profits: </b>{selectedStore.monthlyProfits}</p>
+
+          <Tooltip 
+            title={
+              <>
+                <Typography>ROAS = Return On Ad Spend</Typography>
+                <em>{"It is the multiplier you get on each dollar you spend on ads. if you have a 6 ROAS, you're getting $6 back for each dollar spent on ads"}</em>
+              </>
+            } 
+          >
+            <div className="StoreDetails_ROAS_div">
+              <p> Total ROAS (year): {selectedStore.totalRoas}</p>
+              <HelpOutlineIcon fontSize="small" />
+            </div>
+          </Tooltip>
         </div>
       </div>
-     
       
 
     </Paper>

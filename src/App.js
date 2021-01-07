@@ -45,10 +45,12 @@ function App() {
         minHeight="90vh"
         className="App_pageBodyContainer"
       >
+        <h2>Stores Overview</h2>
         { !isLoading && storesArray && 
           <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>      
         }
 
+        <h2>Selected Store Details</h2>
         { selectedStore &&
           <StoreDetails selectedStore={selectedStore} />
         }
