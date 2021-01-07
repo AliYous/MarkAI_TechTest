@@ -5,6 +5,8 @@ import { Box } from '@material-ui/core';
 import Header from './sharedComponents/Header';
 import AllStoresTable from './components/AllStoresTable';
 import StoreDetails from './components/StoreDetails';
+import { updateFetchedStores } from './utils/storeCalculations';
+
 import './App.css';
 
 
@@ -18,15 +20,16 @@ function App() {
     setIsLoading(true);
     fetchAllStoresList()
     .then(res => {
-      console.log(res.data)
-      setStoresArray(res.data)
+      setStoresArray(updateFetchedStores(res.data))
       setIsLoading(false);
     })
     .catch(err => {
       setError(err)
+      console.log(err)
       setIsLoading(false);
     })
   }, [])
+
 
   return (
     <div className="App">
