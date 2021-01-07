@@ -1,4 +1,5 @@
 import './storeDetails.css';
+import {formatMoneyAmount} from '../utils/formatMoneyAmount';
 import { Paper, Typography, Tooltip} from '@material-ui/core';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
@@ -9,13 +10,13 @@ function StoreDetails({selectedStore}) {
 
       <div className="StoreDetails_numbers">
         <div className="StoreDetails_adSpend_div">
-          <p>Yearly Google Ad Spend : ${selectedStore.adSpend.google.year}</p>
-          <p>Yearly Facebook Ad Spend : ${selectedStore.adSpend.facebook.year}</p>
+          <p>Yearly Google Ad Spend : {formatMoneyAmount(selectedStore.adSpend.google.year, "$")}</p>
+          <p>Yearly Facebook Ad Spend : {formatMoneyAmount(selectedStore.adSpend.facebook.year, "$")}</p>
         </div>
         <div className="StoreDetails_adSpend_div">
           <p><b>Monthly profits: </b>
             <span className={`${selectedStore.isProfitable ? "textColor_green" : "textColor_red"}`}>
-              ${selectedStore.monthlyProfits}
+              {formatMoneyAmount(selectedStore.monthlyProfits)}
             </span></p>
 
           <Tooltip 

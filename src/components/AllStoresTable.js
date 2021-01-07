@@ -1,4 +1,5 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import {formatMoneyAmount} from '../utils/formatMoneyAmount';
 import './allStoresTable.css';
 
 function AllStoresTable({storesArray, setSelectedStore}) {
@@ -32,7 +33,7 @@ const AllStoresTableRow = ({store, handleClick}) => {
           {store.name}
         </TableCell>
         <TableCell align="left">{store.cms}</TableCell>
-        <TableCell align="center">${store.totalYearlyAdSpend}</TableCell>
+        <TableCell align="center">{formatMoneyAmount(store.totalYearlyAdSpend, "$")}</TableCell>
         <TableCell 
           align="center"
         >
