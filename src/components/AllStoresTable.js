@@ -7,7 +7,7 @@ function AllStoresTable({storesArray, setSelectedStore}) {
     <div className="AllStoresTable">
         <TableContainer component={Paper}>
             <Table>
-              <TableHead>
+              <TableHead style={{backgroundColor: '#E4E6EB' }} >
                 <TableRow>
                   <TableCell>Store Name</TableCell>
                   <TableCell align="left">CMS</TableCell>
