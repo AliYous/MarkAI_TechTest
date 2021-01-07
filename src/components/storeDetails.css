@@ -1,0 +1,19 @@
+.StoreDetails {
+  width: 50rem;
+  min-width: 26rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+  .StoreDetails_numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+    .StoreDetails_name {
+      margin-bottom: -0.2rem;
+    }
+    .StoreDetails_adSpend_div {
+      margin-left: -5rem;
+    }

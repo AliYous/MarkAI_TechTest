@@ -6,6 +6,8 @@ export const updateFetchedStores = (fetchedStores) => {
     store.isProfitable = isProfitable(store);
     store.monthlyProfits = getMonthlyProfits(store);
     store.totalYearlyAdSpend = getTotalYearlyAdSpend(store);
+    store.totalRoas = getTotalROAS(store);
+    console.log(store.totalRoas)
     updatedStoresArray.push(store);
   })
   return (updatedStoresArray);
@@ -24,4 +26,10 @@ const getMonthlyProfits = (store) => {
   const totalYearlyAdSpend = getTotalYearlyAdSpend(store);
   const yearlyProfits = store.sales.year - totalYearlyAdSpend;
   return (yearlyProfits / 12);
+};
+
+
+const getTotalROAS = (store) => {
+  const totalYearlyAdSpend = getTotalYearlyAdSpend(store);
+  return ((store.sales.year/totalYearlyAdSpend).toFixed(2))
 };
