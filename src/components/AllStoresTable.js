@@ -5,14 +5,14 @@ import './allStoresTable.css';
 function AllStoresTable({storesArray, setSelectedStore}) {
   return (
     <div className="AllStoresTable">
-        <TableContainer component={Paper}>
-            <Table>
+        <TableContainer component={Paper} >
+            <Table style={{tableLayout: 'fixed', minWidth: '650'}} >
               <TableHead style={{backgroundColor: '#E4E6EB' }} >
                 <TableRow>
                   <TableCell>Store Name</TableCell>
                   <TableCell align="left">CMS</TableCell>
                   <TableCell align="center">Total Ad Spend <br/> (Yearly)</TableCell>
-                  <TableCell align="left">Profitable</TableCell>
+                  <TableCell align="center">Profitable</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
