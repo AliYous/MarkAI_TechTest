@@ -2,7 +2,7 @@
  // Updates the storesArray state so that each store contains all the needed attributes
 export const updateFetchedStores = (fetchedStores) => {
   const updatedStoresArray = []
-  fetchedStores.map((store, i) => {
+  fetchedStores.map((store) => {
     store.isProfitable = isProfitable(store);
     store.monthlyProfits = getMonthlyProfits(store);
     store.totalYearlyAdSpend = getTotalYearlyAdSpend(store);
