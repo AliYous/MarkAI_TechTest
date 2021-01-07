@@ -1,13 +1,7 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
-import { useState, useEffect } from 'react';
 import './allStoresTable.css';
 
 function AllStoresTable({storesArray, setSelectedStore}) {
-  const handleRowClick = (store) => {
-    console.log("store")
-    setSelectedStore(store)
-  }
-
   return (
     <div className="AllStoresTable">
         <TableContainer component={Paper}>
