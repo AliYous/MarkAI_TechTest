@@ -33,9 +33,15 @@ const AllStoresTableRow = ({store, handleClick}) => {
         </TableCell>
         <TableCell align="left">{store.cms}</TableCell>
         <TableCell align="center">${store.totalYearlyAdSpend}</TableCell>
-        <TableCell align="center">{store.isProfitable ? 'YES' : 'NO'}</TableCell>
+        <TableCell 
+          align="center"
+        >
+          <p className={`${store.isProfitable ? "AllStoresTableRow_isProfitable" : "AllStoresTableRow_isNotProfitable"}`}>
+            {store.isProfitable ? 'YES' : 'NO'}
+          </p>
+        </TableCell>
       </TableRow>
-  )
+  ) 
 }
 
 export default AllStoresTable

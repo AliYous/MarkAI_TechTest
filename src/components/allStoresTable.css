@@ -8,3 +8,10 @@
   background-color: #D0E9FF;
   cursor: pointer;
 }
+
+.AllStoresTableRow_isProfitable {
+  color: green;
+}
+.AllStoresTableRow_isNotProfitable {
+  color: red;
+}

@@ -9,11 +9,14 @@ function StoreDetails({selectedStore}) {
 
       <div className="StoreDetails_numbers">
         <div className="StoreDetails_adSpend_div">
-          <p>Yearly Google Ad Spend : {selectedStore.adSpend.google.year}</p>
-          <p>Yearly Facebook Ad Spend : {selectedStore.adSpend.facebook.year}</p>
+          <p>Yearly Google Ad Spend : ${selectedStore.adSpend.google.year}</p>
+          <p>Yearly Facebook Ad Spend : ${selectedStore.adSpend.facebook.year}</p>
         </div>
         <div className="StoreDetails_adSpend_div">
-          <p><b>Monthly profits: </b>{selectedStore.monthlyProfits}</p>
+          <p><b>Monthly profits: </b>
+            <span className={`${selectedStore.isProfitable ? "AllStoresTableRow_isProfitable" : "AllStoresTableRow_isNotProfitable"}`}>
+              ${selectedStore.monthlyProfits}
+            </span></p>
 
           <Tooltip 
             title={
