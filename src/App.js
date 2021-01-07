@@ -48,7 +48,11 @@ function App() {
         <h2>Stores Overview</h2>
 
         { !isLoading && storesArray ? 
-          <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>    
+          <AllStoresTable 
+          storesArray={storesArray} 
+          selectedStore={selectedStore} 
+          setSelectedStore={setSelectedStore}
+          />    
           :
           <CircularProgress color="primary" style={{ marginTop: '1rem' }} />
         }

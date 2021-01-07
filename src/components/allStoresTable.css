@@ -8,3 +8,7 @@
   background-color: #D0E9FF;
   cursor: pointer;
 }
+
+.AllStoresTable_selectedRow {
+  background-color: #D0E9FF;
+}

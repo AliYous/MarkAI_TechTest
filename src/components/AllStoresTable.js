@@ -2,7 +2,7 @@ import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 import {formatMoneyAmount} from '../utils/formatMoneyAmount';
 import './allStoresTable.css';
 
-function AllStoresTable({storesArray, setSelectedStore}) {
+function AllStoresTable({storesArray, selectedStore, setSelectedStore}) {
   return (
     <div className="AllStoresTable">
         <TableContainer component={Paper} >
@@ -17,7 +17,11 @@ function AllStoresTable({storesArray, setSelectedStore}) {
               </TableHead>
               <TableBody>
                 {storesArray.map((store) => (
-                  <AllStoresTableRow key={store.name} store={store} handleClick={setSelectedStore} />
+                  <AllStoresTableRow 
+                  key={store.name} 
+                  store={store} 
+                  selectedStore={selectedStore}
+                  handleClick={setSelectedStore} />
                 ))}
               </TableBody>
             </Table>
@@ -26,9 +30,14 @@ function AllStoresTable({storesArray, setSelectedStore}) {
   )
 }
 
-const AllStoresTableRow = ({store, handleClick}) => {
+const AllStoresTableRow = ({store, selectedStore, handleClick}) => {
   return (
-      <TableRow key={store.name} className="AllStoresTableRow" onClick={() => handleClick(store)} >
+      <TableRow 
+      key={store.name} 
+      className="AllStoresTableRow" 
+      onClick={() => handleClick(store)} 
+      style={{backgroundColor: selectedStore && selectedStore.name === store.name ? '#D0E9FF' : ''}}
+      >
         <TableCell component="th" scope="row">
           {store.name}
         </TableCell>
