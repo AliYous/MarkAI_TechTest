@@ -30,7 +30,6 @@ function App() {
     })
   }, [])
 
-
   return (
     <div className="App">
       <Header />
@@ -44,6 +43,7 @@ function App() {
         justifyContent="center"
         alignItems="center"
         minHeight="90vh"
+        className="App_pageBodyContainer"
       >
         { !isLoading && storesArray && 
           <AllStoresTable storesArray={storesArray} setSelectedStore={setSelectedStore}/>      

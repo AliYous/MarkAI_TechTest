@@ -1,9 +1,10 @@
 import './storeDetails.css';
+import { useEffect } from 'react';
 
-function StoreDetails() {
+function StoreDetails({selectedStore}) {
   return (
     <div>
-      StoreDetails
+       <h1>{selectedStore.adSpend.facebook.year}</h1>
     </div>
   )
 }

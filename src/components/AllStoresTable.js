@@ -2,31 +2,45 @@ import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 import { useState, useEffect } from 'react';
 import './allStoresTable.css';
 
-// const StoresTableRow = (store) => {
-//   
-// }
-
 function AllStoresTable({storesArray, setSelectedStore}) {
-  const [tableRows, setTableRows] = useState();
-
-  const createTableRow = (storeName, cms, totalYearlyAdSpend, isProfitable) => {
-    return { storeName, cms, totalYearlyAdSpend, isProfitable };
+  const handleRowClick = (store) => {
+    console.log("store")
+    setSelectedStore(store)
   }
 
-  useEffect(() => {
-    const tempTableRows = [];
-    storesArray.map((store) => {
-      const row = createTableRow(store.name, store.cms, store.totalYearlyAdSpend, store.isProfitable)
-      tempTableRows.push(row);
-    })
-    console.log(tempTableRows)
-    setTableRows(tempTableRows);    
-  }, [])
-
   return (
-    <Paper>
-     
-    </Paper>
+    <div className="AllStoresTable">
+        <TableContainer component={Paper}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Store Name</TableCell>
+                  <TableCell align="left">CMS</TableCell>
+                  <TableCell align="center">Total Ad Spend <br/> (Yearly)</TableCell>
+                  <TableCell align="left">Profitable</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {storesArray.map((store) => (
+                  <AllStoresTableRow key={store.name} store={store} handleClick={setSelectedStore} />
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+    </div>
+  )
+}
+
+const AllStoresTableRow = ({store, handleClick}) => {
+  return (
+      <TableRow key={store.name} className="AllStoresTableRow" onClick={() => handleClick(store)} >
+        <TableCell component="th" scope="row">
+          {store.name}
+        </TableCell>
+        <TableCell align="left">{store.cms}</TableCell>
+        <TableCell align="center">${store.totalYearlyAdSpend}</TableCell>
+        <TableCell align="center">{store.isProfitable ? 'YES' : 'NO'}</TableCell>
+      </TableRow>
   )
 }
 

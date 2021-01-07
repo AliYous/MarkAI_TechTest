@@ -1,0 +1,10 @@
+.AllStoresTable {
+  width: 50rem;
+  min-width: 26rem;
+  margin: 2rem;
+}
+
+.AllStoresTableRow:hover {
+  background-color: #D0E9FF;
+  cursor: pointer;
+}
